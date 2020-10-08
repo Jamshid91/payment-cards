@@ -1,36 +1,13 @@
 const inputs = document.querySelectorAll('.input_card');
-const getButton = document.querySelector('.get_button');
-const getButtonYandex = document.querySelector('.get_button_yandex');
+const buttons = document.querySelectorAll('.get_button');
 
 const [visaNumber, visaCvv, visaDate, visaName, webMoney, qiwi, yandex] = inputs;
-
+const [visaBtn, webMbtn, qiwiBtn, yandexBtn] = buttons;
 
 
 visaNumber.addEventListener('keydown', cardNumberValidate);
 visaDate.addEventListener('keydown', cardDateValidate);
 yandex.addEventListener('keydown', cardNumberValidate);
-
-getButton.addEventListener('click', () => {
-  if (visaNumber.value == '' || visaCvv.value == '' || visaDate.value == '' || visaName.value == '') {
-    visaNumber.style.border = '1px solid red';
-    visaCvv.style.border = '1px solid red';
-    visaDate.style.border = '1px solid red';
-    visaName.style.border = '1px solid red';
-  } else {
-    visaNumber.style.border = '';
-    visaCvv.style.border = '';
-    visaDate.style.border = '';
-    visaName.style.border = '';
-  }
-});
-
-getButtonYandex.addEventListener('click', () => {
-  if (yandex.value == '') {
-    yandex.style.border = '1px solid red';
-  } else {
-    yandex.style.border = '';
-  }
-});
 
 function cardNumberValidate(e) {
   let value = this.value.replace(/\s+/g, '');
@@ -42,8 +19,7 @@ function cardNumberValidate(e) {
   }
 
   this.value = value.split('').reverse().join('').replace(/\B(?=(\d{4})+(?!\d))/g, " ").split('').reverse().join('').trim();
-}
-
+};
 
 function cardDateValidate(e) {
   let value = this.value.replace(/\s+/g, '');
@@ -55,4 +31,62 @@ function cardDateValidate(e) {
   }
 
   this.value = value.split('').reverse().join('').replace(/\B(?=(\d{2})+(?!\d))/g, "/").split('').reverse().join('').trim();
-}
+};
+
+// valid text
+// const btn = visaBtn.addEventListener;
+
+// btn('click', () => {
+//   if (visaNumber.value == '') {
+//     visaNumber.style.border = '1px solid red';
+//   } else {
+//     visaNumber.style.border = '';
+//   }
+// });
+
+// btn('click', () => {
+//   if (visaCvv.value == '') {
+//     visaCvv.style.border = '1px solid red';
+//   } else {
+//     visaCvv.style.border = '';
+//   }
+// });
+// btn('click', () => {
+//   if (visaDate.value == '') {
+//     visaDate.style.border = '1px solid red';
+//   } else {
+//     visaDate.style.border = '';
+//   }
+// });
+
+// btn('click', () => {
+//   if (visaName.value == '') {
+//     visaName.style.border = '1px solid red';
+//   } else {
+//     visaName.style.border = '';
+//   }
+// });
+
+// yandexBtn.addEventListener('click', () => {
+//   if (yandex.value == '') {
+//     yandex.style.border = '1px solid red';
+//   } else {
+//     yandex.style.border = '';
+//   }
+// });
+
+// qiwiBtn.addEventListener('click', () => {
+//   if (qiwi.value == '') {
+//     qiwi.style.border = '1px solid red';
+//   } else {
+//     qiwi.style.border = '';
+//   }
+// });
+
+// webMbtn.addEventListener('click', () => {
+//   if (webMoney.value == '') {
+//     webMoney.style.border = '1px solid red';
+//   } else {
+//     webMoney.style.border = '';
+//   }
+// });

@@ -16,44 +16,27 @@
     <div class="row d-flex justify-content-center">
       <div class="col-10 text-center">
         <p class="payment_card_title">Форма для принятия платежа</p>
+        <p class="payment_card_title currency_title" style="display: none;">Отправить предварительный платеж</p>
       </div>
     </div>
     <div class="row my_cards_content d-flex justify-content-center align-items-center">
-      <div class="col-lg-3 col-10">
+      <div class="col-lg-3 col-12">
         <div class="payment_card_item w-100">
-
-          <!-- <div class="payment_card_list">
-            <label for="humoCard" data-radio="humo__card" class="radio_wrap">
-              <input type="radio" name="card" id="humoCard" value="humo" checked>
-              <span class="check"></span>
-              HUMO
-            </label>
-            <img src="assets/images/humo.png" alt="humo.jpg">
-          </div> -->
-
-          <!-- <div class="payment_card_list">
-            <label for="uzCard" data-radio="uzCard__card" class="radio_wrap">
-              <input type="radio" name="card" id="uzCard" value="uzCard">
-              <span class="check"></span>
-              UZCARD
-            </label>
-            <img src="assets/images/uzcard.png" alt="uzCard.jpg">
-          </div> -->
 
           <div class="payment_card_list">
             <label for="visaCard" data-radio="visa__card" class="radio_wrap">
               <input type="radio" name="card" id="visaCard" value="visa " checked>
-              <span class="check"></span>
-              Visa / MasterCard
+              <div class="check"></div>
+              <span class="wrap">Visa / MasterCard</span>
             </label>
-            <img src="assets/images/visa.png" alt="visa.jpg">
+            <img src="assets/images/visa.png" alt="visa.jpg" class="card_list_img">
           </div>
 
           <div class="payment_card_list">
             <label for="webMoney" data-radio="webMoney__card" class="radio_wrap">
               <input type="radio" name="card" id="webMoney" value="webMoney">
-              <span class="check"></span>
-              WebMoney
+              <div class="check"></div>
+              <span>WebMoney</span>
             </label>
             <img src="assets/images/webMoney.png" alt="webMoney.jpg">
           </div>
@@ -61,8 +44,8 @@
           <div class="payment_card_list">
             <label for="qiwiCard" data-radio="qiwi__card" class="radio_wrap">
               <input type="radio" name="card" id="qiwiCard" value="qiwi">
-              <span class="check"></span>
-              Qiwi
+              <div class="check"></div>
+              <span>Qiwi</span>
             </label>
             <img src="assets/images/qiwi.png" alt="qiwi.jpg">
           </div>
@@ -70,83 +53,23 @@
           <div class="payment_card_list">
             <label for="yandexCard" data-radio="yandex__card" class="radio_wrap">
               <input type="radio" name="card" id="yandexCard" value="yandex">
-              <span class="check"></span>
-              Яндекс Деньги
+              <div class="check"></div>
+              <span>Яндекс Деньги</span>
             </label>
-            <img src="assets/images/yandex.png" alt="yandex.jpg">
+            <img src="assets/images/yandex.png" alt="yandex.jpg" class="card_list_img">
           </div>
         </div>
       </div>
 
-      <!-- <div class="col-md-9 col-12 humo__card card_content">
-        <div class="payment_card_info w-100">
-          <div class="card_info_item">
-            <div class="card_info_list">
-              <div class="card_info_inputs">
-                <div class="card_info_input">
-                  <label for="card_number">humo</label>
-                  <input type="text" id="card_number" maxlength="16" placeholder="XXXX XXXX XXXX XXXX">
-                </div>
-
-                <div class="card_info_input">
-                  <label for="card_data">год</label>
-                  <input type="text" id="card_data" maxlength="5" placeholder="02/22">
-                </div>
-              </div>
-              <div class="card_info_input">
-                <input type="text" id="card_name" placeholder="EVGENYI PETROV">
-              </div>
-            </div>
-            <div class="card_get_info">
-              <button class="get_button">
-                получить
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- HUMO card -->
-
-      <!-- <div class="col-md-9 col-12 uzCard__card  card_content">
-        <div class="payment_card_info w-100">
-          <div class="card_info_item">
-            <div class="card_info_list">
-              <div class="card_info_inputs">
-                <div class="card_info_input">
-                  <label for="card_number">uz card</label>
-                  <input type="text" id="card_number" maxlength="16" placeholder="XXXX XXXX XXXX XXXX">
-                </div>
-
-                <div class="card_info_input">
-                  <label for="card_data">год</label>
-                  <input type="text" id="card_data" maxlength="5" placeholder="02/22">
-                </div>
-              </div>
-              <div class="card_info_input">
-                <input type="text" id="card_name" placeholder="EVGENYI PETROV">
-              </div>
-            </div>
-            <div class="card_get_info">
-              <button class="get_button">
-                получить
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- UZCARD card -->
-
       <div class="col-lg-9 col-12 visa__card card_content">
-        <div class="payment_card_info w-100">
+        <div class="payment_card_info w-100 review">
           <div class="card_info_item">
             <div class="card_info_list">
               <div class="card_info_inputs">
                 <div class="card_info_input">
                   <label for="card_number">VISA</label>
                   <input type="text" id="card_number" class="input_card" maxlength="19"
-                    placeholder="XXXX XXXX XXXX XXXX">
-                  <!-- only number input -->
-                  <!-- onkeypress="return (event.charCode >= 48 && event.charCode <= 57);" -->
+                    placeholder="0000 0000 0000 0000">
                 </div>
 
                 <div class="card_info_input">
@@ -156,17 +79,35 @@
 
                 <div class="card_info_input">
                   <label for="card_data">ГОД</label>
-                  <input type="text" id="card_date" class="input_card" maxlength="5" placeholder="02/22"
+                  <input type="text" id="card_date" class="input_card" maxlength="5" placeholder="00/00"
                     onkeypress="return (event.charCode >= 48 && event.charCode <= 57);">
                 </div>
               </div>
               <div class="card_info_input">
-                <input type="text" id="card_name" class="input_card" placeholder="EVGENYI PETROV">
+                <input type="text" id="card_name" class="input_card" placeholder="EVGENYI PETROV"
+                  style='text-transform:uppercase'>
               </div>
             </div>
             <div class="card_get_info">
-              <button class="get_button">
+              <button class="get_button get_visa">
                 получить
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="send_advance_payment w-100 review" style="display: none;">
+          <div class="send_advance_item">
+            <div class="send_advance_input">
+              <label for="visa_send">К оплате</label>
+              <input type="text" id="visa_send" class="input_card" maxlength="22">
+              <span>Ваши денежные средства будут зарезервированы на нашей платформ, до подтверждения вами, выполненной
+                работы. Комиссия платформы составляет 4% от общей суммы.</span>
+              <span class="currency">usd</span>
+            </div>
+            <div class="card_get_info">
+              <button class="get_button send_currency">
+                Отправить
               </button>
             </div>
           </div>
@@ -179,10 +120,10 @@
           <div class="card_info_item">
             <div class="card_info_input">
               <label for="webMoney">WebMoney</label>
-              <input type="text" id="webMoney" class="input_card" maxlength="4" placeholder="WMID">
+              <input type="text" id="webMoney" class="input_card" maxlength="15" placeholder="WMID">
             </div>
             <div class="card_get_info">
-              <button class="get_button">
+              <button class="get_button get_webMoney">
                 получить
               </button>
             </div>
@@ -201,7 +142,7 @@
               </div>
             </div>
             <div class="card_get_info">
-              <button class="get_button">
+              <button class="get_button get_qiwi">
                 получить
               </button>
             </div>
@@ -216,12 +157,12 @@
             <div class="card_info_inputs">
               <div class="card_info_input">
                 <label for="yandex">Яндекс Деньги</label>
-                <input type="text" id="yandex" class="input_card" maxlength="18" placeholder="XXXX XXXX XXXX XXX"
+                <input type="text" id="yandex" class="input_card" maxlength="19" placeholder="0000 0000 0000 0000"
                   onkeypress="return (event.charCode >= 48 && event.charCode <= 57);">
               </div>
             </div>
             <div class="card_get_info">
-              <button class="get_button get_button_yandex">
+              <button class="get_button get_yandex">
                 получить
               </button>
             </div>
@@ -236,8 +177,8 @@
         <p>Мои карты / кошельки</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-3 col-6">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-10">
         <div class="my_card w-100">
           <span class="my_card_name">VISA</span> <br>
           <span class="my_card_number"> 5168 **** **** 2548</span>
@@ -248,7 +189,7 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-6">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-10 my__cards">
         <div class="my_card w-100">
           <span class="my_card_name">VISA</span> <br>
           <span class="my_card_number"> 5168 **** **** 2548</span>
@@ -259,7 +200,7 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-6 my__cards">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-10 my__cards">
         <div class="my_card w-100">
           <span class="my_card_name">VISA</span> <br>
           <span class="my_card_number"> 5168 **** **** 2548</span>
@@ -270,7 +211,7 @@
         </div>
       </div>
 
-      <div class="col-lg-3 col-6 my__cards">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-10 my__cards">
         <div class="my_card w-100">
           <span class="my_card_name">VISA</span> <br>
           <span class="my_card_number"> 5168 **** **** 2548</span>
@@ -286,6 +227,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="assets/js/cards.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/sliderBox.js"></script>
 
 </body>
 

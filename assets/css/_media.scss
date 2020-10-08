@@ -54,10 +54,20 @@
       align-items: center;
       flex-direction: column;
       padding: 0 10px;
+      height: 100% !important;
+    }
+
+    .payment_card_title {
+      font-size: 20px !important;
+      padding-bottom: 15px;
+    }
+
+    .payment_card_item {
+      height: 160px !important;
     }
 
     .payment_card .payment_card_info {
-      height: 230px;
+      height: 280px;
       padding: 0;
     }
 
