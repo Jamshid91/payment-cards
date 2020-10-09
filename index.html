@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container payment_card">
     <button class="close_button"><img src="assets/images/close_button.png" alt="close.jpg"></button>
     <div class="row d-flex justify-content-center">
       <div class="col-10 text-center">
@@ -63,7 +63,7 @@
 
       <div class="col-lg-9 col-12 visa__card card_content">
         <div class="payment_card_info w-100 review">
-          <div class="card_info_item">
+          <form onsubmit="" method="POST" action="#visa_advance" class="card_info_item">
             <div class="card_info_list">
               <div class="card_info_inputs">
                 <div class="card_info_input">
@@ -89,11 +89,11 @@
               </div>
             </div>
             <div class="card_get_info">
-              <button class="get_button get_advance_box" id="get_visa">
+              <button type="submit" class="get_button get_advance_box" id="get_visa" value="получить">
                 получить
               </button>
             </div>
-          </div>
+          </form>
         </div>
         <!-- send advance payment  -->
         <div class="send_advance_payment w-100 review" id="visa_advance" style="display: none;">
@@ -212,7 +212,7 @@
               <input type="text" id="yandex_send" class="input_card" maxlength="22">
               <span>Ваши денежные средства будут зарезервированы на нашей платформ, до подтверждения вами, выполненной
                 работы. Комиссия платформы составляет 4% от общей суммы.</span>
-              <span class="currency">rubl</span>
+              <span class="currency">rub</span>
             </div>
             <div class="card_get_info">
               <button class="get_button send_currency">
