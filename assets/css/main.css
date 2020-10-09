@@ -7,22 +7,22 @@
 }
 
 body {
-  background-color: #ccc;
-  margin-top: 20px;
+  background-color: #0006;
+  padding: 20px 0;
 }
 
 body .container {
   position: relative;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: #fff;
   padding: 35px 20px;
-  max-width: 1080px;
+  max-width: 1050px;
 }
 
 body .container .close_button {
   position: absolute;
-  top: 30px;
-  right: 45px;
+  top: 25px;
+  right: 35px;
   background: transparent;
   border: none;
 }
@@ -111,13 +111,13 @@ body .container .check {
           justify-content: space-between;
   -ms-flex-line-pack: center;
       align-content: center;
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 body .container label span {
-  -webkit-transition: .3s ease-out;
-  transition: .3s ease-out;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 body .container .check::before {
@@ -248,7 +248,7 @@ body .container #webMoney,
 body .container #qiwi,
 body .container #yandex {
   width: 310px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 body .container .card_info_list {
@@ -314,8 +314,8 @@ body .container .my_card {
   border-radius: 10px;
   height: 135px;
   cursor: pointer;
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 body .container .my_card:hover {
@@ -448,6 +448,9 @@ body .currency {
 }
 
 @media screen and (max-width: 576px) {
+  body {
+    padding: 0 !important;
+  }
   body .card_info_item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -465,16 +468,24 @@ body .currency {
     padding: 0 10px;
     height: 100% !important;
   }
+  body .close_button {
+    top: 15px !important;
+    right: 25px !important;
+  }
   body .payment_card_title {
-    font-size: 20px !important;
+    font-size: 16px !important;
+    font-weight: 600;
     padding-bottom: 15px;
+  }
+  body .my_card_title p {
+    font-size: 18px !important;
   }
   body .payment_card_item {
     height: 160px !important;
   }
-  body .payment_card .payment_card_info {
+  body .payment_card_info {
     height: 280px;
-    padding: 0;
+    padding: 0 !important;
   }
   body .payment_card .card_info_inputs {
     display: -webkit-box;
@@ -492,19 +503,63 @@ body .currency {
   }
   body .card_info_list {
     width: 100% !important;
+    height: 135px !important;
   }
-  body #card_number {
-    width: 160px !important;
+  body #card_number,
+  body #card_cvv,
+  body #card_date,
+  body #card_name {
+    width: 140px !important;
+    height: 40px;
     padding: 0 0 0 5px;
-    font-size: 15px;
+    font-size: 13px !important;
+  }
+  body #card_number::-webkit-input-placeholder,
+  body #card_cvv::-webkit-input-placeholder,
+  body #card_date::-webkit-input-placeholder,
+  body #card_name::-webkit-input-placeholder {
+    font-size: 13px !important;
+  }
+  body #card_number:-ms-input-placeholder,
+  body #card_cvv:-ms-input-placeholder,
+  body #card_date:-ms-input-placeholder,
+  body #card_name:-ms-input-placeholder {
+    font-size: 13px !important;
+  }
+  body #card_number::-ms-input-placeholder,
+  body #card_cvv::-ms-input-placeholder,
+  body #card_date::-ms-input-placeholder,
+  body #card_name::-ms-input-placeholder {
+    font-size: 13px !important;
+  }
+  body #card_number::placeholder,
+  body #card_cvv::placeholder,
+  body #card_date::placeholder,
+  body #card_name::placeholder {
+    font-size: 13px !important;
   }
   body #card_cvv,
   body #card_date {
-    width: 55px !important;
+    width: 50px !important;
     padding: 0 0 0 10px;
+  }
+  body #card_cvv {
+    margin-left: 5px;
   }
   body #card_name {
     width: 250px !important;
+  }
+  body #visa_send,
+  body #webMoney_send,
+  body #qiwi_send,
+  body #yandex_send {
+    height: 40px;
+  }
+  body #webMoney,
+  body #qiwi,
+  body #yandex {
+    margin-top: 0 !important;
+    height: 40px;
   }
   body .card_get_info {
     margin-top: 20px;
@@ -512,13 +567,52 @@ body .currency {
   body .card_content {
     margin-top: 20px;
   }
+  body .card_get_info,
+  body .get_button {
+    width: 100% !important;
+    margin-bottom: 10px;
+    height: 30px !important;
+  }
   body .card_info_input label {
-    font-size: 14px !important;
+    font-size: 13px !important;
     padding-left: 20px;
     padding-top: 15px;
   }
   body .my__cards {
     margin-top: 15px;
+  }
+  body .send_advance_payment {
+    height: 230px !important;
+    padding: 10px 5px !important;
+  }
+  body .send_advance_input label {
+    padding-left: 15px;
+  }
+  body .send_advance_input span {
+    font-size: 10px;
+  }
+  body .send_advance_item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .card_info_input,
+  body .card_info_input input,
+  body .card_info_inputs {
+    width: 100% !important;
+  }
+  body .card_info_input {
+    height: 100px !important;
+  }
+  body .mobile_card {
+    height: 160px !important;
+  }
+}
+
+@media screen and (max-width: 327px) {
+  .container {
+    margin-left: 35px;
   }
 }
 /*# sourceMappingURL=main.css.map */

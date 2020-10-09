@@ -13,20 +13,20 @@
 }
 
 body {
-  background-color: #ccc;
-  margin-top: 20px;
+  background-color: #0006;
+  padding: 20px 0;
 
   .container {
     position: relative;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: #fff;
     padding: 35px 20px;
-    max-width: 1080px;
+    max-width: 1050px;
 
     .close_button {
       position: absolute;
-      top: 30px;
-      right: 45px;
+      top: 25px;
+      right: 35px;
       background: transparent;
       border: none;
     }
@@ -86,11 +86,11 @@ body {
       z-index: 5;
       @include d-flex();
       align-content: center;
-      transition: .3s ease-out;
+      transition: 0.3s ease-out;
     }
 
     label span {
-      transition: .3s ease-out;
+      transition: 0.3s ease-out;
     }
 
     .check::before {
@@ -177,7 +177,6 @@ body {
 
     #card_name {
       width: 310px;
-
     }
 
     #card_cvv,
@@ -190,7 +189,7 @@ body {
     #qiwi,
     #yandex {
       width: 310px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .card_info_list {
@@ -242,7 +241,7 @@ body {
       border-radius: 10px;
       height: 135px;
       cursor: pointer;
-      transition: .2s ease-out;
+      transition: 0.2s ease-out;
     }
 
     .my_card:hover {
@@ -270,7 +269,7 @@ body {
     }
 
     .send_advance_item {
-      @include d-flex()
+      @include d-flex();
     }
 
     .send_advance_input {
