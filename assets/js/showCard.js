@@ -5,9 +5,16 @@ let sendAdvancePayments = document.querySelectorAll(".send_advance_payment");
 let paymentCardsInfo = document.querySelectorAll(".payment_card_info");
 let currencyTitle = document.querySelector(".currency_title");
 let paymentCardTitle = document.querySelector(".payment_card_title");
+let webMoneyInput = document.getElementById('webMoney');
+const visaInputs = document.querySelectorAll('.form_visaCard input');
+
 
 const [visaAdvance, webMoneyAdvance, qiwiAdvance, yandexAdvance] = sendAdvancePayments;
 const [visaCard, webMoneyCard, qiwiCard, yandexCard] = paymentCardsInfo;
+const [number, cvv, date, name] = visaInputs;
+let visaCardInfo = [];
+let webMoneyCardInfo = [];
+const s_d = 'style.display';
 
 addEventListenerToButtons(getAdvanceBoxs);
 
@@ -41,9 +48,30 @@ function addEventListenerToButtons(getAdvanceBoxs) {
   })
 }
 
+for(let visaInput of visaInputs) {
+  visaInput.addEventListener('keyup', eventHandlerVisaCard)
+}
+
+function eventHandlerVisaCard(e) {
+  if(e.target.id == 'card_number') {
+    window.visaNumberValue = this.value
+  } else if(e.target.id == 'card_cvv') {
+    window.visaCvvValue = this.value
+  } 
+  else if(e.target.id == 'card_date') {
+    window.visaDateValue = this.value
+  } 
+  else if(e.target.id == 'card_name') {
+    window.visaNameValue = this.value
+  }
+}
+
+
+
+
 function addPaymentTitleText() {
-  paymentCardTitle.style.display = "none";
-  currencyTitle.style.display = "block";
+  paymentCardTitle.s_d = "none";
+  currencyTitle.s_d = "block";
 }
 
 radioWraps.forEach((radioWrap) => {
@@ -61,16 +89,32 @@ radioWraps.forEach((radioWrap) => {
   })
 });
 
-function getVisa() {
-  addPaymentTitleText()
-  visaAdvance.style.display = "block";
-  visaCard.style.display = "none";
+
+
+function getVisa(e) {
+  visaCardInfo = {
+   visaNumber: visaNumberValue,
+   visaCvv: visaCvvValue,
+   visaDate: visaDateValue,
+   visaUserName: visaNameValue,
+ }
+ console.log(visaCardInfo)
+
+ if(number.value === '' ||  cvv.value === '' || date.value === '' || name.value === '') {
+   return false
+ }
+ else {
+  addPaymentTitleText(); 
+   visaAdvance.style.display = "block";
+   visaCard.style.display = "none"
+ }
 }
 
 function getWebMoney() {
-  addPaymentTitleText()
+  addPaymentTitleText(); 
   webMoneyAdvance.style.display = "block";
   webMoneyCard.style.display = "none";
+ 
 }
 
 function getQiwi() {

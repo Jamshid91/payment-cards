@@ -24,8 +24,8 @@
         <div class="payment_card_item w-100">
 
           <div class="payment_card_list">
-            <label for="visaCard" data-radio="visa__card" class="radio_wrap">
-              <input type="radio" name="card" id="visaCard" value="visa " checked>
+            <label for="visaCardRadio" data-radio="visa__card" class="radio_wrap">
+              <input type="radio" name="card" id="visaCardRadio" value="visa " checked>
               <div class="check"></div>
               <span class="wrap">Visa / MasterCard</span>
             </label>
@@ -33,8 +33,8 @@
           </div>
 
           <div class="payment_card_list">
-            <label for="webMoney" data-radio="webMoney__card" class="radio_wrap">
-              <input type="radio" name="card" id="webMoney" value="webMoney">
+            <label for="webMoneyRadio" data-radio="webMoney__card" class="radio_wrap">
+              <input type="radio" name="card" id="webMoneyRadio" value="webMoney">
               <div class="check"></div>
               <span>WebMoney</span>
             </label>
@@ -42,8 +42,8 @@
           </div>
 
           <div class="payment_card_list">
-            <label for="qiwiCard" data-radio="qiwi__card" class="radio_wrap">
-              <input type="radio" name="card" id="qiwiCard" value="qiwi">
+            <label for="qiwiCardRadio" data-radio="qiwi__card" class="radio_wrap">
+              <input type="radio" name="card" id="qiwiCardRadio" value="qiwi">
               <div class="check"></div>
               <span>Qiwi</span>
             </label>
@@ -51,8 +51,8 @@
           </div>
 
           <div class="payment_card_list">
-            <label for="yandexCard" data-radio="yandex__card" class="radio_wrap">
-              <input type="radio" name="card" id="yandexCard" value="yandex">
+            <label for="yandexCardRadio" data-radio="yandex__card" class="radio_wrap">
+              <input type="radio" name="card" id="yandexCardRadio" value="yandex">
               <div class="check"></div>
               <span>Яндекс Деньги</span>
             </label>
@@ -63,33 +63,34 @@
 
       <div class="col-lg-9 col-12 visa__card card_content">
         <div class="payment_card_info w-100 review">
-          <form onsubmit="" method="POST" action="#visa_advance" class="card_info_item">
+          <form method="" action="" class="card_info_item form_visaCard">
             <div class="card_info_list">
               <div class="card_info_inputs">
                 <div class="card_info_input">
                   <label for="card_number">VISA</label>
                   <input type="text" id="card_number" class="input_card" maxlength="19"
-                    placeholder="0000 0000 0000 0000">
+                    placeholder="0000 0000 0000 0000" required>
                 </div>
 
                 <div class="card_info_input">
                   <label for="card_cvv">CVV</label>
-                  <input type="text" id="card_cvv" class="input_card" maxlength="3" placeholder="CVV">
+                  <input type="text" id="card_cvv" class="input_card" maxlength="3" placeholder="CVV"
+                    onkeypress="return (event.charCode >= 48 && event.charCode <= 57);" required>
                 </div>
 
                 <div class="card_info_input">
                   <label for="card_data">ГОД</label>
                   <input type="text" id="card_date" class="input_card" maxlength="5" placeholder="00/00"
-                    onkeypress="return (event.charCode >= 48 && event.charCode <= 57);">
+                    onkeypress="return (event.charCode >= 48 && event.charCode <= 57);" required>
                 </div>
               </div>
               <div class="card_info_input">
                 <input type="text" id="card_name" class="input_card" placeholder="EVGENYI PETROV"
-                  style='text-transform:uppercase'>
+                  style='text-transform:uppercase' required>
               </div>
             </div>
             <div class="card_get_info">
-              <button type="submit" class="get_button get_advance_box" id="get_visa" value="получить">
+              <button type="button" class="get_button get_advance_box" id="get_visa">
                 получить
               </button>
             </div>
@@ -97,10 +98,11 @@
         </div>
         <!-- send advance payment  -->
         <div class="send_advance_payment w-100 review" id="visa_advance" style="display: none;">
-          <div class="send_advance_item">
+          <form method="" action="" class="send_advance_item">
             <div class="send_advance_input">
               <label for="visa_send">К оплате</label>
-              <input type="text" id="visa_send" class="input_card" maxlength="22">
+              <input type="text" id="visa_send" class="input_card_advance" maxlength="22"
+                onkeypress="return (event.charCode >= 48 && event.charCode <= 57);" required>
               <span>Ваши денежные средства будут зарезервированы на нашей платформ, до подтверждения вами, выполненной
                 работы. Комиссия платформы составляет 4% от общей суммы.</span>
               <span class="currency">usd</span>
@@ -110,84 +112,86 @@
                 Отправить
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
       <!-- VISA card -->
 
       <div class="col-md-9 col-12 webMoney__card card_content">
-        <div class="payment_card_info mobile_card w-100">
+        <form class="payment_card_info mobile_card w-100">
           <div class="card_info_item">
             <div class="card_info_input">
               <label for="webMoney">WebMoney</label>
-              <input type="text" id="webMoney" class="input_card" maxlength="15" placeholder="WMID">
+              <input type="text" id="webMoney" class="input_card" maxlength="15" placeholder="WMID" required>
             </div>
             <div class="card_get_info">
-              <button class="get_button get_advance_box" id="get_webMoney">
+              <button type="button" class="get_button get_advance_box" id="get_webMoney">
                 получить
               </button>
             </div>
           </div>
-        </div>
+        </form>
         <!-- send advance payment  -->
-        <div class="send_advance_payment w-100 review" id="webMoney_advance" style="display: none;">
+        <form class="send_advance_payment w-100 review" id="webMoney_advance" style="display: none;">
           <div class="send_advance_item">
             <div class="send_advance_input">
               <label for="webMoney_send">К оплате</label>
-              <input type="text" id="webMoney_send" class="input_card" maxlength="22">
+              <input type="text" id="webMoney_send" class="input_card_advance" maxlength="22"
+                onkeypress="return (event.charCode >= 48 && event.charCode <= 57);" required>
               <span>Ваши денежные средства будут зарезервированы на нашей платформ, до подтверждения вами, выполненной
                 работы. Комиссия платформы составляет 4% от общей суммы.</span>
               <span class="currency">usd</span>
             </div>
             <div class="card_get_info">
-              <button class="get_button send_currency">
+              <button type="submit" class="get_button send_currency">
                 Отправить
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
       <!-- WebMoney card -->
 
       <div class="col-md-9 col-12 qiwi__card card_content">
-        <div class="payment_card_info mobile_card w-100">
+        <form class="payment_card_info mobile_card w-100">
           <div class="card_info_item">
             <div class="card_info_inputs">
               <div class="card_info_input">
                 <label for="qiwi">Qiwi</label>
-                <input type="text" id="qiwi" class="input_card" maxlength="16" placeholder="Номер телефона">
+                <input type="text" id="qiwi" class="input_card" maxlength="16" placeholder="Номер телефона" required>
               </div>
             </div>
             <div class="card_get_info">
-              <button class="get_button get_advance_box" id="get_qiwi">
+              <button type="button" class="get_button get_advance_box" id="get_qiwi">
                 получить
               </button>
             </div>
           </div>
-        </div>
+        </form>
 
         <!-- send advance payment  -->
-        <div class="send_advance_payment w-100 review" id="yandex_advance" style="display: none;">
+        <form class="send_advance_payment w-100 review" id="yandex_advance" style="display: none;">
           <div class="send_advance_item">
             <div class="send_advance_input">
               <label for="qiwi_send">К оплате</label>
-              <input type="text" id="qiwi_send" class="input_card" maxlength="22">
+              <input type="text" id="qiwi_send" class="input_card_advance" maxlength="22"
+                onkeypress="return (event.charCode >= 48 && event.charCode <= 57);" required>
               <span>Ваши денежные средства будут зарезервированы на нашей платформ, до подтверждения вами, выполненной
                 работы. Комиссия платформы составляет 4% от общей суммы.</span>
               <span class="currency">usd</span>
             </div>
             <div class="card_get_info">
-              <button class="get_button send_currency">
+              <button type="submit" class="get_button send_currency">
                 Отправить
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
       <!-- QIWI card -->
 
       <div class="col-md-9 col-12 yandex__card  card_content">
-        <div class="payment_card_info mobile_card w-100">
+        <form class="payment_card_info mobile_card w-100">
           <div class="card_info_item">
             <div class="card_info_inputs">
               <div class="card_info_input">
@@ -197,35 +201,36 @@
               </div>
             </div>
             <div class="card_get_info">
-              <button class="get_button get_advance_box" id="get_yandex">
+              <button type="button" class="get_button get_advance_box" id="get_yandex">
                 получить
               </button>
             </div>
           </div>
-        </div>
+        </form>
 
         <!-- send advance payment  -->
         <div class="send_advance_payment w-100 review" id="yandex_advance" style="display: none;">
-          <div class="send_advance_item">
+          <form class="send_advance_item">
             <div class="send_advance_input">
               <label for="yandex_send">К оплате</label>
-              <input type="text" id="yandex_send" class="input_card" maxlength="22">
+              <input type="text" id="yandex_send" class="input_card_advance" maxlength="22"
+                onkeypress="return (event.charCode >= 48 && event.charCode <= 57);" required>
               <span>Ваши денежные средства будут зарезервированы на нашей платформ, до подтверждения вами, выполненной
                 работы. Комиссия платформы составляет 4% от общей суммы.</span>
               <span class="currency">rub</span>
             </div>
             <div class="card_get_info">
-              <button class="get_button send_currency">
+              <button type="submit" class="get_button send_currency">
                 Отправить
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
       <!-- YANDEX card -->
 
     </div>
-    <!-- end first row -->
+    <!-- end payment cards ******************************************************************************************** -->
 
 
     <div class="row">
@@ -283,7 +288,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="assets/js/cards.js"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/sliderBox.js"></script>
+  <script src="assets/js/showCard.js"></script>
 
 </body>
 
